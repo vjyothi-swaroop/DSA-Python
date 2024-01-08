@@ -56,7 +56,24 @@ if __name__ == '__main__':
     
     
     
-    
+# Output
+
+Electronics
+   |__Laptop
+      |__Mac
+      |__Surface
+      |__Galaxy
+   |__Mobiles
+      |__Iphone
+      |__Vivo
+      |__Iqoo
+   |__Tv
+      |__Lg
+      |__Samsung
+
+
+
+
     
     
     
