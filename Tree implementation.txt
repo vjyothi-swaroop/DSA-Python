@@ -1,0 +1,67 @@
+#implementation of Tree
+
+class Node():
+    def __init__(self, data):
+        self.data = data
+        self.children = []
+        self.parent = None
+        
+    def add_child(self, child):
+        child.parent = self
+        self.children.append(child)
+        
+    def get_level(self):
+        p = self.parent
+        level = 0
+        while p:
+            level += 1
+            p = p.parent
+        return level
+        
+    def print_tree(self):
+        spaces = "   " * self.get_level() + "|__" if self.parent else ""
+        print(spaces + self.data)
+        if self.children:
+            for child in self.children:
+                child.print_tree()
+        
+        
+def build_product_tree():
+    root = Node("Electronics")
+    
+    laptop = Node("Laptop")
+    laptop.add_child(Node("Mac"))
+    laptop.add_child(Node("Surface"))
+    laptop.add_child(Node("Galaxy"))
+    
+    mobile = Node("Mobiles")
+    mobile.add_child(Node("Iphone"))
+    mobile.add_child(Node("Vivo"))
+    mobile.add_child(Node("Iqoo"))
+    
+    tv = Node("Tv")
+    tv.add_child(Node("Lg"))
+    tv.add_child(Node("Samsung"))
+    
+    root.add_child(laptop)
+    root.add_child(mobile)
+    root.add_child(tv)
+    
+    return root
+        
+if __name__ == '__main__':
+    root = build_product_tree()
+    root.print_tree()
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    #for visibilty of screen purpose
